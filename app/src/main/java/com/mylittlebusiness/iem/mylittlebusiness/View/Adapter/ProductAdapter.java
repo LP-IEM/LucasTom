@@ -84,7 +84,6 @@ public class ProductAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if(itemAddListener != null){
-                    productList.get(position).incrementNumber();
                     itemAddListener.onAddProduct(getItem(position));
                 }
             }
@@ -94,7 +93,6 @@ public class ProductAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if(itemAddListener != null){
-                    productList.get(position).decrementNumber();
                     itemAddListener.onRemoveProduct(getItem(position));
                 }
             }
@@ -102,9 +100,9 @@ public class ProductAdapter extends BaseAdapter {
 
         // Change line color
         if(position%2 == 0){
-            ((LinearLayout)convertView.findViewById(R.id.item_layout_background)).setBackgroundColor(Color.parseColor("#e9e9e9"));
+            convertView.findViewById(R.id.item_layout_background).setBackgroundColor(Color.parseColor("#e9e9e9"));
         }else{
-            ((LinearLayout)convertView.findViewById(R.id.item_layout_background)).setBackgroundColor(Color.parseColor("#FFFFFF"));
+            convertView.findViewById(R.id.item_layout_background).setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         return convertView;
